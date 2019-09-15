@@ -28,7 +28,8 @@ function endGame() {
   $("#total-time-played").text(totalPlayedSeconds);
   $("#textMaxHits").text(maxHits);
   $("#textPenaltyHits").text(penaltyHits);
-  totalScore = totalPlayedSeconds * maxHits - totalPlayedSeconds * penaltyHits; 
+  totalScore = 100/totalPlayedSeconds * 100/(penaltyHits+maxHits); 
+  totalScore = totalScore.toPrecision(3)
   $("#textTotalScore").text(totalScore);
   $("#win-message").removeClass("d-none");
 }
